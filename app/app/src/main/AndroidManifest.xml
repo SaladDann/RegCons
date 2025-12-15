@@ -20,10 +20,6 @@
             android:name=".ui.main.Registrarse"
             android:exported="false" />
         <activity
-            android:name=".ui.reportes.ReportesActivity"
-            android:label="Reportes"
-            android:exported="false" />
-        <activity
             android:name=".ui.main.ScreenInicial"
             android:exported="false" />
         <activity
@@ -35,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
@@ -50,4 +45,5 @@
             android:label="Administración de Reportes">
         </activity>
     </application>
+
 </manifest>

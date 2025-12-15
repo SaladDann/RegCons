@@ -17,7 +17,7 @@ import java.util.Locale;
 public class DbRegCons extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "regcons.db";
-    private static final int DATABASE_VERSION = 2; // Incrementa la versión
+    private static final int DATABASE_VERSION = 2;
 
     // Tabla y columnas para usuarios
     public static final String TABLE_USERS = "usuarios";
@@ -60,6 +60,17 @@ public class DbRegCons extends SQLiteOpenHelper {
     public static final String COL_OBRA_FECHA_FIN = "fecha_fin";
     public static final String COL_OBRA_PRESUPUESTO = "presupuesto";
     public static final String COL_OBRA_ESTADO = "estado";
+
+    //Tabla para reportes
+    public static final String TABLE_REPORTES = "reportes_seguridad";
+    public static final String COL_REPORTE_ID = "id_reporte";
+    public static final String COL_TIPO = "tipo_reporte";
+    public static final String COL_DESCRIPCION = "descripcion";
+    public static final String COL_SEVERIDAD = "severidad";
+    public static final String COL_FECHA = "fecha_timestamp";
+    public static final String COL_FOTOS_URIS = "fotos_uris";
+    public static final String COL_SINCRONIZADO = "sincronizado";
+
 
     // Sentencias SQL para crear las tablas
     private static final String CREATE_USERS_TABLE =
@@ -483,5 +494,80 @@ public class DbRegCons extends SQLiteOpenHelper {
                 " WHERE " + COL_OBRA_NOMBRE + " = ?";
 
         return db.rawQuery(query, new String[]{nombreObra});
+    }
+
+    public long insertarReporte(String tipo, String descripcion, String severidad,
+                                long fechaTimestamp, String fotosUris) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(COL_TIPO, tipo);
+        values.put(COL_DESCRIPCION, descripcion);
+        values.put(COL_SEVERIDAD, severidad);
+        values.put(COL_FECHA, fechaTimestamp);
+        values.put(COL_FOTOS_URIS, fotosUris);
+        values.put(COL_SINCRONIZADO, 0);
+
+        return db.insert(TABLE_REPORTES, null, values);
+    }
+
+    public Cursor obtenerReportesPendientes() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = {
+                COL_REPORTE_ID,
+                COL_TIPO,
+                COL_DESCRIPCION,
+                COL_SEVERIDAD,
+                COL_FECHA,
+                COL_FOTOS_URIS
+        };
+
+        String selection = COL_SINCRONIZADO + " = ?";
+        String[] selectionArgs = {"0"};
+
+        Cursor cursor = db.query(
+                TABLE_REPORTES,
+                columns,
+                selection,
+                selectionArgs,
+                null,
+                null,
+                COL_FECHA + " ASC"
+        );
+
+        return cursor;
+    }
+
+    public int eliminarReporte(long idReporte) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String whereClause = COL_REPORTE_ID + " = ?";
+        String[] whereArgs = {String.valueOf(idReporte)};
+
+        return db.delete(
+                TABLE_REPORTES,
+                whereClause,
+                whereArgs
+        );
+    }
+
+    public int actualizarReporte(long idReporte, String nuevaDescripcion, String nuevaSeveridad) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COL_DESCRIPCION, nuevaDescripcion);
+        values.put(COL_SEVERIDAD, nuevaSeveridad);
+
+        String whereClause = COL_REPORTE_ID + " = ?";
+        String[] whereArgs = {String.valueOf(idReporte)};
+
+        return db.update(
+                TABLE_REPORTES,
+                values,
+                whereClause,
+                whereArgs
+        );
     }
 }
