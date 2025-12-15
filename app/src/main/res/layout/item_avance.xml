@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/txtNombreAvance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del avance"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgEvidencia"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:background="@color/design_default_color_primary_dark" />
+
+        <TextView
+            android:id="@+id/txtDescripcionAvance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/txtFechaAvance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2025-01-01"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtEstadoAvance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PENDIENTE"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btnToggleEstado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Finalizar"
+                app:backgroundTint="@color/exito" />
+
+            <Button
+                android:id="@+id/btnEliminarAvance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                app:backgroundTint="@color/error" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
