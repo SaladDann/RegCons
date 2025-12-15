@@ -24,4 +24,27 @@
     <color name="oscuro_advertencia">#FBBF24</color>
     <color name="oscuro_exito">#22C55E</color>
     <color name="oscuro_error">#EF4444</color>
+    <!-- Colores existentes -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <!-- Nuevos colores para reportes -->
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorText">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+
+    <!-- Colores para incidentes -->
+    <color name="colorIncidenteLeve">#4CAF50</color>      <!-- Verde -->
+    <color name="colorIncidenteModerado">#FF9800</color>  <!-- Naranja -->
+    <color name="colorIncidenteGrave">#F44336</color>     <!-- Rojo -->
+
+    <!-- Colores para estados -->
+    <color name="colorEstadoActivo">#4CAF50</color>
+    <color name="colorEstadoPendiente">#FF9800</color>
+    <color name="colorEstadoCompletado">#2196F3</color>
 </resources>

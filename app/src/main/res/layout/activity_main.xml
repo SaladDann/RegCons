@@ -14,8 +14,7 @@
         android:background="@color/advertencia"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:titleTextAppearance="@style/ToolbarTitleStyle"
-        tools:ignore="MissingConstraints"/>
+        app:titleTextAppearance="@style/ToolbarTitleStyle"/>
 
 
     <ScrollView
@@ -63,12 +62,12 @@
                         android:textSize="14sp"/>
 
                     <Spinner
-                        android:id="@+id/spinnerObras"
+                        android:id="@+id/spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/txtPorcentaje"
+                        android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="15dp"
@@ -76,7 +75,7 @@
                         android:textStyle="bold" />
 
                     <ProgressBar
-                        android:id="@+id/progressAvance"
+                        android:id="@+id/progressBar"
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="280dp"
                         android:layout_height="20dp" />
@@ -88,13 +87,12 @@
                 android:layout_height="25dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/main_mbtnAvances"
+                android:id="@+id/log_mbtn"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="300dp"
                 android:layout_height="80dp"
                 android:backgroundTint="#3F51B5"
-                android:onClick="mainAvances"
-                android:text="Registrar obras y Avances "
+                android:text="Registrar Avance"
                 android:textColor="@color/fondo_principal"
                 android:textColorLink="#673AB7"
                 android:tooltipText="Control de avance de obra "
@@ -105,7 +103,7 @@
                 app:strokeWidth="2dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/main_mbtnIncidentes"
+                android:id="@+id/log_mbtn2"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="300dp"
                 android:layout_height="80dp"
@@ -121,7 +119,7 @@
                 app:strokeWidth="2dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/main_mbtnReportes"
+                android:id="@+id/log_mbtn3"
                 style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="300dp"
                 android:layout_height="80dp"

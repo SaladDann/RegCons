@@ -2,12 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -19,22 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegCons">
         <activity
-            android:name=".ui.main.AcercaDe"
-            android:exported="false" />
-        <activity
-            android:name=".ui.main.Ajustes"
-            android:exported="false" />
-        <activity
-            android:name=".ui.avance.FormularioObra"
-            android:exported="false" />
-        <activity
-            android:name=".ui.avance.ScreenObras"
-            android:exported="false" />
-        <activity
             android:name=".ui.main.Login"
             android:exported="false" />
         <activity
             android:name=".ui.main.Registrarse"
+            android:exported="false" />
+        <activity
+            android:name=".ui.reportes.ReportesActivity"
+            android:label="Reportes"
             android:exported="false" />
         <activity
             android:name=".ui.main.ScreenInicial"
@@ -48,9 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
     </application>
-
 </manifest>

@@ -23,7 +23,7 @@ import com.example.regcons.R;
 
 public class Splash extends AppCompatActivity {
 
-    private static final int TIME_LOAD = 1000;
+    private static final int TIME_LOAD = 1500;
     private static final long TIME_VIBRATE = 300;
     private MediaPlayer mediaPlayer;
 
@@ -40,7 +40,7 @@ public class Splash extends AppCompatActivity {
 
         // Llamado a funciones splash
         ocultarBarras();
-        //reproducirSonido(R.raw.splash);
+        reproducirSonido(R.raw.splash);
         vibrar(TIME_VIBRATE);
 
         // Tiempo de carga de la app
